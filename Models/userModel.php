@@ -2,14 +2,13 @@
 
 function createUser($pdo){
     try {
-        $query = "insert into utilisateurs(utilisateurLastname, utilisateurSurname, utilisteurID, utilisateurMdp, role) values (:utilisateurLastname, :utilisateurSurname, :utilisteurID, :utilisateurMdp, :role)";
+        $query = "insert into utilisateur(utilisateurLastname, utilisateurSurname, utilisateurEmail, utilisateurMdp) values (:utilisateurLastname, :utilisateurSurname, :utilisateurEmail, :utilisateurMdp)";
         $ajouteUser = $pdo->prepare($query);
         $ajouteUser->execute([
             'utilisateurLastname' => $_POST['nom'],
             'utilisateurSurname' => $_POST['prenom'],
-            'utilisteurID' => $_POST['login'],
-            'utilisateurMdp' => $_POST['mot_de_passe'],
-            'role' => 'user'
+            'utilisateurEmail' => $_POST['email'],
+            'utilisateurMdp' => $_POST['mot_de_passe']
         ]);
     } catch (PDOException $e) {
         $message = $e->getMessage();
@@ -18,10 +17,10 @@ function createUser($pdo){
 }
 function ChercherUser($pdo){
     try {
-        $query = "select * FROM utilisateurs WHERE utilisteurID = :utilisteurID and utilisateurMdp = :utilisateurMdp";
+        $query = "select * FROM utilisateur WHERE utilisateurEmail = :utilisateurEmail and utilisateurMdp = :utilisateurMdp";
         $chercheUser = $pdo->prepare($query);
         $chercheUser->execute([
-            'utilisteurID' => $_POST['login'],
+            'utilisateurEmail' => $_POST['email'],
             'utilisateurMdp' => $_POST['mot_de_passe'],
         ]);
         $user = $chercheUser -> fetch();

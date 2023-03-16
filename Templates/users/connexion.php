@@ -3,8 +3,8 @@
         <fieldset>
             <legend>Se connecter</legend>
             <div class="mb-3">
-                <label for="Login" class="form-label">Login</label>
-                <input type="text" placeholder="Login" class="form-control" id="Login" name="login">
+                <label for="Email" class="form-label">Email</label>
+                <input type="text" placeholder="Email" class="form-control" id="Email" name="email">
             </div>
             <div class="mb-3">
                 <label for="Password" class="form-label">Mot de passe</label>

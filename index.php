@@ -1,7 +1,7 @@
 <?php
-/*session_start();
+session_start();
 require_once "Config/databaseConnexion.php";
-$sth = $pdo->prepare("select * from Utilisateur");
+/*$sth = $pdo->prepare("select * from Utilisateur");
 $sth->execute();
 /* Récupération de toutes les lignes d'un jeu de résultats 
 print("Récupération de toutes les lignes d'un jeu de résultats :\n"); 
@@ -35,6 +35,7 @@ print_r($result);*/
             //var_dump($_SESSION);
             require_once "Controllers/gemmesController.php"; 
             require_once "Controllers/userController.php"; 
+            var_dump($_SESSION);
         ?>
     </main>
 </body>
