@@ -1,6 +1,7 @@
+<div class="flexContainer justify-content-center">
 <form method="post" action="">
     <fieldset>
-        <legend>Inscription</legend>
+        <legend class= "h1">Inscription</legend>
         <div class="mb-3">
             <label for="Nom" class="form-label">Nom</label>
             <input type="text" placeholder="Nom" class="form-control" id="Nom" name="nom" value="">
@@ -26,4 +27,7 @@
             <button name="btnEnvoi" class="btn btn-primary">Envoyer</button>
         </div>
     </fieldset>
+    <h3 class="text-danger flexContainer justify-content-center">Déjà inscrit ?</h3>
+    <a href="connexion" class="btn btn-secondary">Se connecter</a>
 </form>
+</div>

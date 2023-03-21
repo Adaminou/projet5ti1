@@ -1,0 +1,219 @@
+body{
+    background-color:rgb(53, 53, 53);
+    font-family:"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+}
+main {
+    
+    background-color: gray;
+    margin: 10px;
+    height: 100%;
+    padding: 100px;
+    border-radius: 5px;
+
+
+}
+
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    text-align: center;
+}
+
+h2 {
+    color: green;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: wavy underline overline;
+}
+
+img {
+    width: 300px;
+    height: auto;
+}
+
+ol li {
+    font-size: 30px ;
+    margin-bottom: 20px;
+}
+
+#imageProfil {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    transform: scale(0);
+}
+
+#imageBien {
+    height: 200px;
+    width: auto;
+}
+.btn{
+    width: 195px;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 12 5px;
+    margin: 10px auto;
+    line-height: 25px;
+}
+
+.btn-page {
+    background-color: blueviolet;
+    color: whitesmoke;
+    border: 1px solid white;
+}
+
+.btn-primary {
+    background-color: #238636;
+    color: whitesmoke;
+    border-radius: 6px;
+}
+.btn-primary:hover{
+    background-color:#2a9c41;
+}
+.btn-secondary {
+    padding: 16px 16px;
+    text-align: center;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+
+}
+
+
+.btn-send {
+    background-color: rgb(9, 162, 233);
+    color: whitesmoke;
+    border: 1px solid white;
+}
+
+.btn-load {
+    background-color: rgb(44, 117, 10);
+    color: whitesmoke;
+    border: 1px solid white;
+}
+
+.imageMenu {
+    color: azure;
+    cursor: pointer;
+}
+a:hover{
+    background-color: rgb(161, 161, 161);
+}
+a {
+    
+    text-decoration: none;
+    background-color: gray;
+    color: whitesmoke;
+    border-radius: 10%;
+    padding: 10px;
+    border: 1px solid #000000;
+
+}
+
+#lienAgence {
+    display: inline-block;
+    padding: 15px;
+    border: 1px dotted red;
+}
+
+#imageLettre{
+    height: 80px;
+    width: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.width-80 {
+    width: 80%;
+}
+
+.center {
+    text-align: center;
+}
+
+.border {
+    border: 1px solid black;
+}
+
+.card {
+    width: 300px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.452);
+    margin: 0;
+    padding: 10px;
+    border-radius:5px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    padding: 15px;
+}
+
+ul li a {
+    color: white;
+    font-size: larger;
+}
+
+.blocImageBien {
+    height: 300px;
+    align-items: center;
+}
+
+.imageIcon {
+    width: 30px;
+}
+
+footer {
+    background-color: blue;
+    margin: 0;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer p a {
+    color: white;
+}
+
+th {
+    background-color: aqua;
+}
+
+.blocGauche {
+    width: 300px;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.progress {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: green;
+}

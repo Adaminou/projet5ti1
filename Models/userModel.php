@@ -34,16 +34,3 @@ function ChercherUser($pdo){
         die($message);
     }
 }
-
-
-
-/*try {
-    $query = "SELECT * FROM biens";
-    $ajoute = $pdo->prepare($query);
-    $ajoute->execute();
-    $biens = $ajoute->fetchAll();
-} catch (PDOException $e) {
-    $message = $e->getMessage();
-    die($message);
-}
-echo '<pre>' , var_dump($biens) , '</pre>';*/

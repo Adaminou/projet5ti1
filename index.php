@@ -1,3 +1,7 @@
+<!--    Comment faire pour que le bloc main aille jusqu'en bas.
+         Pour que lorsque on se connecte et qu'on clique sur un compte sauvegardé par Google la couleur reste la même.
+         Pour retirer l'ombre noir dans le btn-primary                                                         
+    -->
 <?php
 session_start();
 require_once "Config/databaseConnexion.php";
@@ -16,11 +20,15 @@ print_r($result);*/
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/form.css">
+    <link rel="stylesheet" href="CSS/flex.css">
+
+
     <title>Les Gemmes</title>
 </head>
 <body>
 <header>
-        <ul class="flex space-evenly">
+        <ul class="flexContainer space-evenly">
             <li class="menu"><a href="/">Home</a></li>
             <li  class="menu"><a href="profil">Page Profil</a></li>
             <li  class="menu">
@@ -42,3 +50,5 @@ print_r($result);*/
     </main>
 </body>
 </html>
+
+
