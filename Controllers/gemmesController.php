@@ -4,3 +4,4 @@ if($uri === "/index.php" || $uri === "/"){
     require_once "Templates/gemmes/pageAccueil.php";
 }
 ?>
+<!-- test -->

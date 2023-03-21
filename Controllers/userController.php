@@ -30,7 +30,7 @@ require_once "Templates/users/inscription.php";
 
 
 
-
+///TEST
 
 
 function verifData(){
@@ -43,5 +43,5 @@ function verifData(){
     
     return $messageErrorLogin;
 }
-
+///TEST
 ?>
