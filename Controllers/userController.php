@@ -12,10 +12,11 @@ if($uri === "/inscription"){
         header('location:/connexion');
         }
     }
-require_once "Templates/users/inscription.php";
+require_once "Templates/users/inscriptionOrEditProfil.php";
 
 }elseif ($uri === "/connexion") {
     if(isset($_POST["btnEnvoi"])){
+            var_dump($_SESSION);
             ChercherUser($pdo);
             header('location:/');
 }
@@ -25,12 +26,9 @@ require_once "Templates/users/inscription.php";
     header('location:/');
 
 }elseif ($uri === "/profil") {
-    //require_once "Templates/users/profil.php";
+    require_once "Templates/users/inscriptionOrEditProfil.php";
 }
 
-
-
-///TEST
 
 
 function verifData(){
@@ -40,8 +38,11 @@ function verifData(){
         }
 
     }
-    
+    if(isset($messageErrorLogin)) {
     return $messageErrorLogin;
 }
-///TEST
+else {
+    return false;
+}
+}
 ?>

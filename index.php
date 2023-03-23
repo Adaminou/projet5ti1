@@ -42,7 +42,7 @@ print_r($result);*/
 </header>
 <main>
         <?php 
-            //var_dump($_SESSION);
+            var_dump($_SESSION);
             require_once "Controllers/gemmesController.php"; 
             require_once "Controllers/userController.php"; 
             //var_dump($_SESSION);
