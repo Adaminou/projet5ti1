@@ -34,3 +34,32 @@ function ChercherUser($pdo){
         die($message);
     }
 }
+function updateUser($pdo){
+try {
+    $query = "update utilisateur set utilisateurLastname = :utilisateurLastname, utilisateurSurname = :utilisateurSurname, utilisateurMdp = :utilisateurMdp where utilisateurID = :utilisateurID";
+    $changeUser = $pdo->prepare($query);
+    $changeUser->execute([
+        'utilisateurLastname' => $_POST['nom'],
+        'utilisateurSurname' => $_POST['prenom'],
+        'utilisateurMdp' => $_POST['mot_de_passe'],
+        'utilisateurID' =>  $_SESSION['user'] -> utilisateurID
+    ]);
+} catch (PDOException $e) {
+    $message = $e->getMessage();
+    die($message);
+}
+}
+function updateSession($pdo){
+    try {
+        $query = "select * FROM utilisateur WHERE utilisateurID = :utilisateurID";
+        $chercheUser = $pdo->prepare($query);
+        $chercheUser->execute([
+            'utilisateurID' => $_SESSION['user'] -> utilisateurID
+        ]);
+        $user = $chercheUser -> fetch();
+            $_SESSION['user']=$user;
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}

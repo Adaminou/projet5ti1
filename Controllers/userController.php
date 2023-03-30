@@ -15,17 +15,24 @@ if($uri === "/inscription"){
 require_once "Templates/users/inscriptionOrEditProfil.php";
 
 }elseif ($uri === "/connexion") {
+    var_dump($_SESSION);
     if(isset($_POST["btnEnvoi"])){
-            var_dump($_SESSION);
             ChercherUser($pdo);
             header('location:/');
-}
+    }
     require_once "Templates/users/connexion.php";
 }elseif ($uri === "/deconnexion") {
     session_destroy();
     header('location:/');
 
-}elseif ($uri === "/profil") {
+}elseif ($uri === "/profil"){ {
+    if(isset($_POST["btnEnvoi"])){
+
+        updateUser($pdo);
+        updateSession($pdo);
+        header('location:/profil');
+        }
+    }
     require_once "Templates/users/inscriptionOrEditProfil.php";
 }
 

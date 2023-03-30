@@ -20,7 +20,7 @@
         </div>
         <div class="mb-3">
             <label for="Password" class="form-label">Mot de passe</label>
-            <input type="passwor<?php if(isset($_SESSION["user"])) : ?>text<?php else : ?>password<?php endif ?>" placeholder="Mot de passe" class="form-control" id="Password" name="mot_de_passe" value="<?php if(isset($_SESSION["user"])) : ?> <?= $_SESSION["user"] ->utilisateurMdp?> <?php endif ?>">
+            <input type="password<?php if(isset($_SESSION["user"])) : ?>text<?php else : ?>password<?php endif ?>" placeholder="Mot de passe" class="form-control" id="Password" name="mot_de_passe" value="<?php if(isset($_SESSION["user"])) : ?> <?= $_SESSION["user"] ->utilisateurMdp?> <?php endif ?>">
             <?php if(isset($messageErrorLogin["mot_de_passe"])) : ?><p> <?= str_replace('_', ' ', $messageErrorLogin["mot_de_passe"] )?> </p> <?php endif ?> 
         </div>
         <div>
