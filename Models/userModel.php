@@ -25,6 +25,7 @@ function ChercherUser($pdo){
         ]);
         $user = $chercheUser -> fetch();
         if ($user) {
+            var_dump("coucou");
             $_SESSION['user']=$user;
         }
         var_dump($user);
@@ -58,6 +59,18 @@ function updateSession($pdo){
         ]);
         $user = $chercheUser -> fetch();
             $_SESSION['user']=$user;
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+function deleteUser($pdo){
+    try {
+        $query = "delete FROM utilisateur WHERE utilisateurID = :utilisateurID";
+        $deleteUser = $pdo->prepare($query);
+        $deleteUser->execute([
+            'utilisateurID' => $_SESSION['user'] -> utilisateurID
+        ]);
     } catch (PDOException $e) {
         $message = $e->getMessage();
         die($message);

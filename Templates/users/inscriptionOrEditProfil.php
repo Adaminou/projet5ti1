@@ -24,7 +24,12 @@
             <?php if(isset($messageErrorLogin["mot_de_passe"])) : ?><p> <?= str_replace('_', ' ', $messageErrorLogin["mot_de_passe"] )?> </p> <?php endif ?> 
         </div>
         <div>
-            <button name="btnEnvoi" class="btn btn-primary">Envoyer</button>
+            <button name="btnEnvoi" class="btn btn-primary" value="envoyer"> Envoyer</button>
+        </div>
+        <div>
+            <p>
+            <?php if(isset($_SESSION["user"])) :?><button name="btnSupression" class="btn btn-thirday" value="supprimer"> Supprimer</button> <?php endif ?>
+            </p>    
         </div>
     </fieldset>
     <h3 class="text-danger flexContainer justify-content-center">Déjà inscrit ?</h3>

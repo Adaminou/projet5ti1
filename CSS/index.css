@@ -70,6 +70,15 @@ ol li {
     color: whitesmoke;
     border-radius: 6px;
 }
+.btn-thirday {
+    background-color: #9b2222;
+    color: whitesmoke;
+    border-radius: 6px;
+}
+.btn-thirday:hover {
+    background-color: #b82222;
+    
+}
 .btn-primary:hover{
     background-color:#2a9c41;
 }

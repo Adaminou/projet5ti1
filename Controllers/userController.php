@@ -3,11 +3,16 @@
 $uri = $_SERVER["REQUEST_URI"];
 
 require_once "Models/userModel.php";
+require_once "Models/gemmeModel.php";
 
 if($uri === "/inscription"){
+    var_dump("coucou");
     if(isset($_POST["btnEnvoi"])){
+        
         $messageErrorLogin = verifData();
+        var_dump($messageErrorLogin);
         if (!isset($messageErrorLogin)){
+        var_dump("coucou");
         createUser($pdo);
         header('location:/connexion');
         }
@@ -25,17 +30,21 @@ require_once "Templates/users/inscriptionOrEditProfil.php";
     session_destroy();
     header('location:/');
 
-}elseif ($uri === "/profil"){ {
+}elseif ($uri === "/profil"){
     if(isset($_POST["btnEnvoi"])){
-
         updateUser($pdo);
         updateSession($pdo);
         header('location:/profil');
-        }
+    }
+    if(isset($_POST["btnSupression"])){
+        var_dump("coucou");
+        deleteUsersGemmes($pdo);
+        deleteUser($pdo);
+        session_destroy();
+        header('location:/connexion');
     }
     require_once "Templates/users/inscriptionOrEditProfil.php";
 }
-
 
 
 function verifData(){
