@@ -11,3 +11,16 @@ function deleteUsersGemmes($pdo){
         die($message);
     }
 }
+function selectAllGemme($dbh)
+{
+    try {
+        $query = 'select * FROM gemmes';
+        $selectGemme = $dbh-> prepare($query);
+        $selectGemme->execute();
+        $gemmes = $selectGemme ->fetchAll();
+        return $gemmes;
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
