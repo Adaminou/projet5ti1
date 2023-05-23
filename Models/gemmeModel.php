@@ -1,7 +1,7 @@
 <?php
 function deleteUsersGemmes($pdo){
     try {
-        $query = "delete FROM gemmes WHERE utilisateurID = :utilisateurID";
+        $query = "delete FROM utilisateurs_gemmes_magasins WHERE utilisateurID = :utilisateurID";
         $deleteUserGemmes = $pdo->prepare($query);
         $deleteUserGemmes->execute([
             'utilisateurID' => $_SESSION['user'] -> utilisateurID

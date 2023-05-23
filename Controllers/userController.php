@@ -11,8 +11,9 @@ if($uri === "/inscription"){
         
         $messageErrorLogin = verifData();
         var_dump($messageErrorLogin);
-        if (!isset($messageErrorLogin)){
-        var_dump("coucou");
+        var_dump("coucou2");
+        if (!$messageErrorLogin){
+        var_dump("coucou3");
         createUser($pdo);
         header('location:/connexion');
         }

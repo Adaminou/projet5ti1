@@ -33,7 +33,7 @@ CREATE TABLE `gemmes` (
   PRIMARY KEY (`gemmesID`),
   KEY `rareteID` (`rareteID`),
   CONSTRAINT `gemmes_ibfk_1` FOREIGN KEY (`rareteID`) REFERENCES `rarete` (`rareteID`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `gemmes` (
 
 LOCK TABLES `gemmes` WRITE;
 /*!40000 ALTER TABLE `gemmes` DISABLE KEYS */;
-INSERT INTO `gemmes` VALUES (1,'Diamant',1000,'Australie','pierre précieuse très dure et très brillante, composée de carbone cristallisé.','https://www.123ambre.com/wp-content/uploads/2020/11/quartz-rose-300x227.jpg',4),(2,'Saphir',500,'Madagascar','pierre précieuse souvent bleue, bien que sa couleur puisse varier du violet au rose.','',3),(3,'Rubis',100,'Birmanie','une pierre précieuse rouge profond','',3),(4,'Emeraude',500,'Madagascar','pierre précieuse verte','',3),(5,'Aigue-marine',50,'Brésil','pierre précieuse bleu clair','',2),(6,'Grenat',20,'Inde','pierre rouge foncé','',2),(7,'Citrine',50,'Brésil','pierre jaune clair','',1),(8,'Topaze',20,'Mexique','pierre multicolore qui peut présenter une grande variété de couleurs, notamment le bleu, le rose et le jaune','',1),(9,'Perle',10,'Madagascar','pierre organique produite par des mollusques','',1),(10,'Améthyste',10,'Uruguay','pierre violet clair','',1),(11,'Diamant',1000,'Australie','pierre précieuse très dure et très brillante, composée de carbone cristallisé.','https://www.bracelet-chakra-blog.fr/wp-content/uploads/2019/09/Pierre-Diamant-978x800.jpg',4),(12,'Saphir',500,'Madagascar','pierre précieuse souvent bleue, bien que sa couleur puisse varier du violet au rose.','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/saphirs/saphir-ceylon.jpg',3),(13,'Rubis',100,'Birmanie','une pierre précieuse rouge profond','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/rubis.jpg',3),(14,'Emeraude',500,'Madagascar','pierre précieuse verte','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/emeraude.jpg',3),(15,'Aigue-marine',50,'Brésil','pierre précieuse bleu clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/aigue-marine-aaa.jpg',2),(16,'Grenat',20,'Inde','pierre rouge foncé','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/grenat-mozambique.jpg',2),(17,'Citrine',50,'Brésil','pierre jaune clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/citrine-madarine.jpg',1),(18,'Topaze',20,'Mexique','pierre multicolore qui peut présenter une grande variété de couleurs, notamment le bleu, le rose et le jaune','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/topaze-marambaia.jpg',1),(19,'Perle',10,'Madagascar','pierre organique produite par des mollusques','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/perle-doree.jpg',1),(20,'Améthyste',10,'Uruguay','pierre violet clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/amethyste-aaa.jpg',1),(21,'Diamant',1000,'Australie','pierre précieuse très dure et très brillante, composée de carbone cristallisé.','https://www.bracelet-chakra-blog.fr/wp-content/uploads/2019/09/Pierre-Diamant-978x800.jpg',4),(22,'Saphir',500,'Madagascar','pierre précieuse souvent bleue, bien que sa couleur puisse varier du violet au rose.','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/saphirs/saphir-ceylon.jpg',3),(23,'Rubis',100,'Birmanie','une pierre précieuse rouge profond','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/rubis.jpg',3),(24,'Emeraude',500,'Madagascar','pierre précieuse verte','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/emeraude.jpg',3),(25,'Aigue-marine',50,'Brésil','pierre précieuse bleu clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/aigue-marine-aaa.jpg',2),(26,'Grenat',20,'Inde','pierre rouge foncé','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/grenat-mozambique.jpg',2),(27,'Citrine',50,'Brésil','pierre jaune clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/citrine-madarine.jpg',1),(28,'Topaze',20,'Mexique','pierre multicolore qui peut présenter une grande variété de couleurs, notamment le bleu, le rose et le jaune','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/topaze-marambaia.jpg',1),(29,'Perle',10,'Madagascar','pierre organique produite par des mollusques','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/perle-doree.jpg',1),(30,'Améthyste',10,'Uruguay','pierre violet clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/amethyste-aaa.jpg',1);
+INSERT INTO `gemmes` VALUES (11,'Diamant',1000,'Australie','pierre précieuse très dure et très brillante, composée de carbone cristallisé.','https://www.bracelet-chakra-blog.fr/wp-content/uploads/2019/09/Pierre-Diamant-978x800.jpg',4),(12,'Saphir',500,'Madagascar','pierre précieuse souvent bleue, bien que sa couleur puisse varier du violet au rose.','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/saphirs/saphir-ceylon.jpg',3),(13,'Rubis',100,'Birmanie','une pierre précieuse rouge profond','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/rubis.jpg',3),(14,'Emeraude',500,'Madagascar','pierre précieuse verte','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/emeraude.jpg',3),(15,'Aigue-marine',50,'Brésil','pierre précieuse bleu clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/aigue-marine-aaa.jpg',2),(16,'Grenat',20,'Inde','pierre rouge foncé','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/grenat-mozambique.jpg',2),(17,'Citrine',50,'Brésil','pierre jaune clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/citrine-madarine.jpg',1),(18,'Topaze',20,'Mexique','pierre multicolore qui peut présenter une grande variété de couleurs, notamment le bleu, le rose et le jaune','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/topaze-marambaia.jpg',1),(19,'Perle',10,'Madagascar','pierre organique produite par des mollusques','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/perle-doree.jpg',1),(20,'Améthyste',10,'Uruguay','pierre violet clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/amethyste-aaa.jpg',1);
 /*!40000 ALTER TABLE `gemmes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +86,7 @@ CREATE TABLE `magasins` (
   `magasinsNom` varchar(255) NOT NULL,
   `magasinsLieu` varchar(255) NOT NULL,
   PRIMARY KEY (`magasinsID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,6 +95,7 @@ CREATE TABLE `magasins` (
 
 LOCK TABLES `magasins` WRITE;
 /*!40000 ALTER TABLE `magasins` DISABLE KEYS */;
+INSERT INTO `magasins` VALUES (1,'Gemstones Express','Anvers'),(2,'GemmArt','Bruxelles'),(3,'Precious Traders','Gand'),(4,'Diamond Oasis','Liège'),(5,'Emerald Junction','Namur');
 /*!40000 ALTER TABLE `magasins` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +160,7 @@ CREATE TABLE `utilisateur` (
   `utilisateurEmail` varchar(255) DEFAULT NULL,
   `utilisateurMdp` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`utilisateurID`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,34 +169,8 @@ CREATE TABLE `utilisateur` (
 
 LOCK TABLES `utilisateur` WRITE;
 /*!40000 ALTER TABLE `utilisateur` DISABLE KEYS */;
-INSERT INTO `utilisateur` VALUES (1,' Marc ',' Feure ','feur@site.asty-moulin.be',' marcmarc123 '),(2,'Adam','Essalhi','200537@site.asty-moulin.be','adamadam123'),(3,'Maxime','Pourquoi','Max@site.asty-moulin.be','maxmax123'),(4,'Ali','Albaba','200537@site.asty-moulin.be','aliali123'),(5,'Youssef','Alkattab','Youssef@site.asty-moulin.be','youyou123'),(6,'  adam  ','  essalho ','adam@hotmail.com','  adam123  '),(7,' adam ',' essalhi ','adamadam@hotmail.com',' adam1234 '),(8,'','','',''),(9,'','','',''),(10,'asdasd','asdasd','asdasd@hotmail.com','asdasd'),(11,'asdasd','asdasd','asdasd@hotmail.com','asdasd'),(12,'','','',''),(13,'','','',''),(14,'oui','non','oui@live.fr','test'),(15,' camarche ',' camarche ','camarche@live.fr',' camarche123 ');
+INSERT INTO `utilisateur` VALUES (1,' Marc ',' Feure ','feur@site.asty-moulin.be',' marcmarc123 '),(2,'Adam',' Essalhi             ','200537@site.asty-moulin.be','   adamadam1234            '),(3,'Maxime','Pourquoi','Max@site.asty-moulin.be','maxmax123'),(4,'Ali','Albaba','200537@site.asty-moulin.be','aliali123'),(5,'Youssef','Alkattab','Youssef@site.asty-moulin.be','youyou123'),(17,'test','test','test@live.be','test');
 /*!40000 ALTER TABLE `utilisateur` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `utilisateurs`
---
-
-DROP TABLE IF EXISTS `utilisateurs`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `utilisateurs` (
-  `utilisateurID` int NOT NULL AUTO_INCREMENT,
-  `utilisateurNom` varchar(255) NOT NULL,
-  `utilisateurPrenom` varchar(255) NOT NULL,
-  `utilisateurEmail` varchar(255) NOT NULL,
-  `utilisateurMdp` varchar(255) NOT NULL,
-  PRIMARY KEY (`utilisateurID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `utilisateurs`
---
-
-LOCK TABLES `utilisateurs` WRITE;
-/*!40000 ALTER TABLE `utilisateurs` DISABLE KEYS */;
-/*!40000 ALTER TABLE `utilisateurs` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -238,4 +213,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-06 16:14:45
+-- Dump completed on 2023-05-23 11:56:43
