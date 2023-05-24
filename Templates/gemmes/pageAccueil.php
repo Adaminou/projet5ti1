@@ -1,25 +1,16 @@
 <h1>Les gemmes</h1>
-<div class ="bordure justify-content-center flexContainer align-item-center">
-      <h2>Nom de la gemme</h2>
-      <img src="" alt ="Photo de l'image">
-      <p><span>Prix</span>
+<?php if(isset($_SESSION['user'])) :?>
+<ul class="space-evenly">
+   <li  class="menu"><a href="createGemme">Ajouter une gemme</a></li>
+</ul>
+<?php endif ?>
+<div class = "flexContainer wrap">
+<?php foreach ($gemmes as $gemmes) : ?>
+   <div class ="bordure center blocGemme">
+         <img class = gemmeImg src="<?= $gemmes -> gemmesImage ?>" alt ="Photo de la gemme">
+         <h2><?= $gemmes -> gemmesNom ?></h2>
+         <p><span><?= $gemmes -> gemmesPrix ?>€</span>
+         <p><a href="voirGemme?gemmesID=<?= $gemmes -> gemmesID ?>">Voir la gemme</a></p>
    </div>
-   <div class ="bordure justify-content-center flexContainer align-item-center">
-   <div>
-      <h2>Nom de la gemme</h2>
-      <img src="" alt ="Photo de l'image">
-      <p><span>Prix</span>
-   </div>
-   <div class ="bordure justify-content-center flexContainer align-item-center">
-   <div>
-      <h2>Nom de la gemme</h2>
-      <img src="" alt ="Photo de l'image">
-      <p><span>Prix</span>
-   </div>
-   <div class ="bordure justify-content-center flexContainer align-item-center">
-   <div>
-      <h2>Nom de la gemme</h2>
-      <img src="" alt ="Photo de l'image">
-      <p><span>Prix</span>
-   </div>
-  
+ <?php endforeach ?>
+</div>

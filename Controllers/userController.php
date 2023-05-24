@@ -11,9 +11,7 @@ if($uri === "/inscription"){
         
         $messageErrorLogin = verifData();
         var_dump($messageErrorLogin);
-        var_dump("coucou2");
         if (!$messageErrorLogin){
-        var_dump("coucou3");
         createUser($pdo);
         header('location:/connexion');
         }
@@ -21,7 +19,6 @@ if($uri === "/inscription"){
 require_once "Templates/users/inscriptionOrEditProfil.php";
 
 }elseif ($uri === "/connexion") {
-    var_dump($_SESSION);
     if(isset($_POST["btnEnvoi"])){
             ChercherUser($pdo);
             header('location:/');
@@ -38,7 +35,6 @@ require_once "Templates/users/inscriptionOrEditProfil.php";
         header('location:/profil');
     }
     if(isset($_POST["btnSupression"])){
-        var_dump("coucou");
         deleteUsersGemmes($pdo);
         deleteUser($pdo);
         session_destroy();

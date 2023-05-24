@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
--- Host: 10.10.51.252    Database: adam
+-- Host: 127.0.0.1    Database: gemmes
 -- ------------------------------------------------------
--- Server version	8.0.27
+-- Server version	8.0.32
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -33,7 +33,7 @@ CREATE TABLE `gemmes` (
   PRIMARY KEY (`gemmesID`),
   KEY `rareteID` (`rareteID`),
   CONSTRAINT `gemmes_ibfk_1` FOREIGN KEY (`rareteID`) REFERENCES `rarete` (`rareteID`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `gemmes` (
 
 LOCK TABLES `gemmes` WRITE;
 /*!40000 ALTER TABLE `gemmes` DISABLE KEYS */;
-INSERT INTO `gemmes` VALUES (11,'Diamant',1000,'Australie','pierre précieuse très dure et très brillante, composée de carbone cristallisé.','https://www.bracelet-chakra-blog.fr/wp-content/uploads/2019/09/Pierre-Diamant-978x800.jpg',4),(12,'Saphir',500,'Madagascar','pierre précieuse souvent bleue, bien que sa couleur puisse varier du violet au rose.','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/saphirs/saphir-ceylon.jpg',3),(13,'Rubis',100,'Birmanie','une pierre précieuse rouge profond','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/rubis.jpg',3),(14,'Emeraude',500,'Madagascar','pierre précieuse verte','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/emeraude.jpg',3),(15,'Aigue-marine',50,'Brésil','pierre précieuse bleu clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/aigue-marine-aaa.jpg',2),(16,'Grenat',20,'Inde','pierre rouge foncé','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/grenat-mozambique.jpg',2),(17,'Citrine',50,'Brésil','pierre jaune clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/citrine-madarine.jpg',1),(18,'Topaze',20,'Mexique','pierre multicolore qui peut présenter une grande variété de couleurs, notamment le bleu, le rose et le jaune','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/topaze-marambaia.jpg',1),(19,'Perle',10,'Madagascar','pierre organique produite par des mollusques','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/perle-doree.jpg',1),(20,'Améthyste',10,'Uruguay','pierre violet clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/amethyste-aaa.jpg',1);
+INSERT INTO `gemmes` VALUES (1,'Diamant',1000,'Australie','pierre précieuse très dure et très brillante, composée de carbone cristallisé.','https://www.bracelet-chakra-blog.fr/wp-content/uploads/2019/09/Pierre-Diamant-978x800.jpg',4),(2,'Saphir',500,'Madagascar','pierre précieuse souvent bleue, bien que sa couleur puisse varier du violet au rose.','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/saphirs/saphir-ceylon.jpg',3),(3,'Rubis',100,'Birmanie','une pierre précieuse rouge profond','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/rubis.jpg',3),(4,'Emeraude',500,'Madagascar','pierre précieuse verte','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/emeraude.jpg',3),(5,'Aigue-marine',50,'Brésil','pierre précieuse bleu clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/aigue-marine-aaa.jpg',2),(6,'Grenat',20,'Inde','pierre rouge foncé','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/grenat-mozambique.jpg',2),(7,'Citrine',50,'Brésil','pierre jaune clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/citrine-madarine.jpg',1),(8,'Topaze',20,'Mexique','pierre multicolore qui peut présenter une grande variété de couleurs, notamment le bleu, le rose et le jaune','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/topaze-marambaia.jpg',1),(9,'Perle',10,'Madagascar','pierre organique produite par des mollusques','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/perle-doree.jpg',1),(10,'Améthyste',10,'Uruguay','pierre violet clair','https://www.juwelo.fr/media/wysiwyg/guide-des-pierres/amethyste-aaa.jpg',1);
 /*!40000 ALTER TABLE `gemmes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,9 +60,9 @@ CREATE TABLE `gemmes_type` (
   PRIMARY KEY (`gemmesTypeId`),
   KEY `gemmesID` (`gemmesID`),
   KEY `typeID` (`typeID`),
-  CONSTRAINT `gemmes_type_ibfk_1` FOREIGN KEY (`gemmesID`) REFERENCES `gemmes` (`gemmesID`),
-  CONSTRAINT `gemmes_type_ibfk_2` FOREIGN KEY (`typeID`) REFERENCES `type` (`typeID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `gemmes_type_ibfk_2` FOREIGN KEY (`typeID`) REFERENCES `type` (`typeID`),
+  CONSTRAINT `gemmesID` FOREIGN KEY (`gemmesID`) REFERENCES `gemmes` (`gemmesID`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,6 +71,7 @@ CREATE TABLE `gemmes_type` (
 
 LOCK TABLES `gemmes_type` WRITE;
 /*!40000 ALTER TABLE `gemmes_type` DISABLE KEYS */;
+INSERT INTO `gemmes_type` VALUES (1,1,1),(2,2,2),(3,3,3),(4,4,4),(5,5,2),(6,6,4),(7,7,1),(8,8,3),(9,9,2),(10,10,2);
 /*!40000 ALTER TABLE `gemmes_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +135,7 @@ CREATE TABLE `type` (
   `typeID` int NOT NULL AUTO_INCREMENT,
   `typeNom` varchar(255) NOT NULL,
   PRIMARY KEY (`typeID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,6 +144,7 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
+INSERT INTO `type` VALUES (1,'Gemmes Précieuses'),(2,'Gemmes Semi-Précieuses'),(3,'Gemmes Transparentes'),(4,'Gemmes Nacrées');
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,7 +191,7 @@ CREATE TABLE `utilisateurs_gemmes_magasins` (
   KEY `gemmesID` (`gemmesID`),
   KEY `utilisateurID` (`utilisateurID`),
   KEY `magasinsID` (`magasinsID`),
-  CONSTRAINT `utilisateurs_gemmes_magasins_ibfk_1` FOREIGN KEY (`gemmesID`) REFERENCES `gemmes` (`gemmesID`),
+  CONSTRAINT `utilisateurs_gemmes_magasins_ibfk_	1` FOREIGN KEY (`gemmesID`) REFERENCES `gemmes` (`gemmesID`),
   CONSTRAINT `utilisateurs_gemmes_magasins_ibfk_2` FOREIGN KEY (`utilisateurID`) REFERENCES `utilisateur` (`utilisateurID`),
   CONSTRAINT `utilisateurs_gemmes_magasins_ibfk_3` FOREIGN KEY (`magasinsID`) REFERENCES `magasins` (`magasinsID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -213,4 +215,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-23 11:56:43
+-- Dump completed on 2023-05-24 23:26:28

@@ -30,19 +30,22 @@ print_r($result);*/
 <header>
         <ul class="flexContainer space-evenly">
             <li class="menu"><a href="/">Home</a></li>
-            <li  class="menu"><a href="profil">Page Profil</a></li>
             <li  class="menu">
                 <?php if(isset($_SESSION['user'])) :?>
+                    <a href="profil">Page Profil</a></li>
                     <a href="deconnexion">Déconnexion</a>
                 <?php else :?> 
                     <a href="connexion">Connexion</a>
                 <?php endif ?>
             </li>
         </ul>
+
+        
+
 </header>
 <main>
+
         <?php 
-            var_dump($_SESSION);
             require_once "Controllers/gemmesController.php"; 
             require_once "Controllers/userController.php"; 
             //var_dump($_SESSION);

@@ -4,6 +4,7 @@ body{
 }
 main {
     
+    width: 90%;
     background-color: gray;
     margin: 10px;
     height: 100%;
@@ -22,17 +23,37 @@ h1 {
     text-align: center;
 }
 .bordure{
-    border: 1px solid;
+    border: 1px solid black;
 }
 
 img {
-    width: 300px;
-    height: auto;
+    width: 200px;
+}
+.gemmeImg{
+    mix-blend-mode: multiply;
+    width: 200px;
+}
+.gemmeImg:hover
+{
+    filter: opacity(10);
+}
+
+.blocGemme{
+    width: 500px;
+    margin: 20px;
+    padding: 10px;
+
 }
 
 ol li {
     font-size: 30px ;
     margin-bottom: 20px;
+    list-style-type: none;
+    text-decoration: none;
+}
+.imageimage{
+    text-decoration: none;
+    justify-content: center;
 }
 
 #imageProfil {
@@ -171,6 +192,8 @@ ul li {
 ul li a {
     color: white;
     font-size: larger;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 .blocImageBien {
