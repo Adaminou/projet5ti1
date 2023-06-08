@@ -4,9 +4,11 @@
    <li  class="menu"><a href="createGemme">Ajouter une gemme</a></li>
 </ul>
 <?php endif ?>
+
 <?php if(isset($_SESSION['flashMessage'])) : ?>
-<?php require_once "Component/alertFlashMessage.php"; ?>
+   <?php require_once "Component/alertFlashMessage.php"; ?>
 <?php endif ?>
+
 <div class = "flexContainer wrap">
 <?php foreach ($gemmes as $gemmes) : ?>
    <div class ="bordure center blocGemme">
