@@ -5,10 +5,10 @@ function createUser($pdo){
         $query = "insert into utilisateur(utilisateurLastname, utilisateurSurname, utilisateurEmail, utilisateurMdp) values (:utilisateurLastname, :utilisateurSurname, :utilisateurEmail, :utilisateurMdp)";
         $ajouteUser = $pdo->prepare($query);
         $ajouteUser->execute([
-            'utilisateurLastname' => $_POST['nom'],
-            'utilisateurSurname' => $_POST['prenom'],
-            'utilisateurEmail' => $_POST['email'],
-            'utilisateurMdp' => $_POST['mot_de_passe']
+            'utilisateurLastname' => htmlentities($_POST['nom']),
+            'utilisateurSurname' => htmlentities($_POST['prenom']),
+            'utilisateurEmail' => htmlentities($_POST['email']),
+            'utilisateurMdp' => htmlentities($_POST['mot_de_passe'])
         ]);
     } catch (PDOException $e) {
         $message = $e->getMessage();
@@ -20,8 +20,8 @@ function ChercherUser($pdo){
         $query = "select * FROM utilisateur WHERE utilisateurEmail = :utilisateurEmail and utilisateurMdp = :utilisateurMdp";
         $chercheUser = $pdo->prepare($query);
         $chercheUser->execute([
-            'utilisateurEmail' => $_POST['email'],
-            'utilisateurMdp' => $_POST['mot_de_passe'],
+            'utilisateurEmail' => htmlentities($_POST['email']),
+            'utilisateurMdp' => htmlentities($_POST['mot_de_passe']),
         ]);
         $user = $chercheUser -> fetch();
         if ($user) {
@@ -40,9 +40,9 @@ try {
     $query = "update utilisateur set utilisateurLastname = :utilisateurLastname, utilisateurSurname = :utilisateurSurname, utilisateurMdp = :utilisateurMdp where utilisateurID = :utilisateurID";
     $changeUser = $pdo->prepare($query);
     $changeUser->execute([
-        'utilisateurLastname' => $_POST['nom'],
-        'utilisateurSurname' => $_POST['prenom'],
-        'utilisateurMdp' => $_POST['mot_de_passe'],
+        'utilisateurLastname' => htmlentities($_POST['nom']),
+        'utilisateurSurname' => htmlentities($_POST['prenom']),
+        'utilisateurMdp' => htmlentities($_POST['mot_de_passe']),
         'utilisateurID' =>  $_SESSION['user'] -> utilisateurID
     ]);
 } catch (PDOException $e) {

@@ -22,7 +22,7 @@ print_r($result);*/
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/form.css">
     <link rel="stylesheet" href="CSS/flex.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <title>Les Gemmes</title>
 </head>
@@ -32,6 +32,7 @@ print_r($result);*/
             <li class="menu"><a href="/">Home</a></li>
             <li  class="menu">
                 <?php if(isset($_SESSION['user'])) :?>
+                    <a href="mesGemmes">Mes Gemmes</a>
                     <a href="profil">Page Profil</a></li>
                     <a href="deconnexion">Déconnexion</a>
                 <?php else :?> 

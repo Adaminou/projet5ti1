@@ -15,11 +15,11 @@ function selectAllTypes($pdo)
 }
 function ajouterTypesGemmes($pdo, $gemmesID, $typeID){
     try{
-        $query = "insert into gemmes_typeID (gemmesID, typeID) values (:gemmesID, :typeID)";
+        $query = "insert into gemmes_type (gemmesID, typeID) values (:gemmesID, :typeID)";
         $selectAllTypes = $pdo->prepare($query);
         $selectAllTypes->execute([
-            'gemmesID' => $gemmesID,
-            'typeID' => $typeID
+            'gemmesID' => htmlentities($gemmesID),
+            'typeID' => htmlentities($typeID)
         ]);
     }
     catch(PDOException $e){

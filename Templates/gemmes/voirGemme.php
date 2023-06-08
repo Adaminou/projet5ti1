@@ -17,7 +17,7 @@
                 <p><?= $gemmes-> gemmesLieu?></p>
             </div>
             <div>
-                <li>Description</li>
+                <li>Description</li>    
                 <p><?= $gemmes-> gemmesDescription?></p>
             </div>
             <div>
@@ -29,5 +29,4 @@
                 <p><?= $gemmes -> raretelevel?></p>
             </div>
         </ol>
-    </div>
 </div>

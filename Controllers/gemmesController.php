@@ -16,21 +16,37 @@ elseif ($uri === "/createGemme") {
         var_dump($_POST);
         createGemme($pdo);
         $gemmesID = $pdo -> lastInsertId();
-        for ($i=0; $i < count($_POST["type"]); $i++) { 
-        $typeID = $_POST["type"][$i];
+        $typeID = $_POST["type"];
         ajouterTypesGemmes($pdo, $gemmesID, $typeID);
-        
-        }
+        $_SESSION['flashMessage'] = "Votre gemme a bien été créée!";
+        $_SESSION['flashColor'] = "success";
+        header("location:/mesGemmes");
     }
     $types = selectAllTypes($pdo);
     $raretes = selectAllRarete($pdo);
     require_once "Templates/gemmes/editGemmesOrGemmes.php";
 }
+elseif ($uri === "/mesGemmes") {  
+    $gemmes = selectMyGemmes($pdo);
+    require_once "Templates/gemmes/pageAccueil.php";
+}   
 elseif (isset($_GET["gemmesID"]) &&  $uri === "/voirGemme?gemmesID=" . $_GET["gemmesID"]) {
     $gemmes = selectOneGemme ($pdo);
     require_once "Templates/gemmes/voirGemme.php";
 }
-/*elseif ($uri === "/mesGemmes") {  
-    $gemmes = selectMyGemmes($pdo);
-    require_once "Templates/gemmes/pageAccueil.php";
-}*/
+elseif (isset($_GET["gemmesID"]) && $uri === "/deleteGemme?gemmesID=" . $_GET["gemmesID"]) {
+    deleteOneGemme($pdo);
+    header("location:/mesGemmes");
+}
+elseif (isset($_GET["gemmesID"]) && $uri === "/updateGemme?gemmesID=" . $_GET["gemmesID"]) {
+    if (isset($_POST['btnEnvoi'])) {
+        updateGemme($pdo);
+        $typeID = $_POST["type"];
+        ajouterTypesGemmes($pdo, $gemmesID, $typeID);
+        header("location:/mesGemmes");
+        }
+    $gemmes = selectOneGemme($pdo);
+    $types = selectAllTypes($pdo);
+    $raretes = selectAllRarete($pdo);
+    require_once "Templates/gemmes/editGemmesOrGemmes.php";
+}
