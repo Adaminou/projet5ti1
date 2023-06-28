@@ -6,7 +6,7 @@ require_once "Models/userModel.php";
 require_once "Models/gemmeModel.php";
 require_once "Models/chatModel.php";
 
-
+// PARTIE UTILISATEUR
 if($uri === "/inscription"){
     var_dump("coucou");
     if(isset($_POST["btnEnvoi"])){
@@ -47,7 +47,7 @@ require_once "Templates/users/inscriptionOrEditProfil.php";
 // Partie DISCUSSION/CHAT
 
 }elseif ($uri === "/chat") {
-        $utilisateurs = selectAllUsers($pdo);
+        $utilisateurs = selectAllUsers($pdo); 
         if(isset($_POST["btnEnvoi"])){
             $chatID = createChat($pdo, 'groupe');
             foreach($_POST['users'] as $users) {
@@ -59,8 +59,16 @@ require_once "Templates/users/inscriptionOrEditProfil.php";
         $chatGroupe = selectChatGroupe($pdo);
         require_once "Templates/users/chat.php";
 
-}
-elseif (str_starts_with( $uri , "/message")) {
+}else if (str_starts_with($uri, '/supprimer-msg?id=')){
+    $message = selectMsg($pdo, $_GET['id']);
+    if ($message->messageText === 'Ce message a été supprimé.') {
+        deleteMsg($pdo, $_GET['id']);
+    } else {
+        updateMsg($pdo, $_GET['id'], 'Ce message a été supprimé.');
+    }
+    header('location:/chat');
+
+}elseif (str_starts_with( $uri , "/message")) {
     if (isset($_GET['groupId'])) {
         $chatId = $_GET["groupId"];
     } else {
@@ -88,16 +96,8 @@ elseif (str_starts_with( $uri , "/message")) {
 
     require_once "Templates/users/message.php";
 
-
-}else if (str_starts_with($uri, '/supprimer-msg?id=')){
-    $message = selectMsg($pdo, $_GET['id']);
-    if ($message->messageText === 'Ce message a été supprimé.') {
-        deleteMsg($pdo, $_GET['id']);
-    } else {
-        updateMsg($pdo, $_GET['id'], 'Ce message a été supprimé.');
-    }
-    header('location:/chat');
 }
+
 
 // verification data
 function verifData(){
