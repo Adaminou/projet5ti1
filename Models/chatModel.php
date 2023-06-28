@@ -29,6 +29,20 @@ function sendMsg($pdo, $messageText, $utilisateurID, $conversationId){
         die($message);
     }
 }
+function selectMsg($pdo, $messageId) {
+    try {
+        $query = "SELECT * FROM message where messageId = :messageId";
+        $selectUsers = $pdo->prepare($query);
+        $selectUsers->execute([
+            'messageId' => $messageId
+        ]);
+        $users = $selectUsers->fetch();
+        return $users;
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
 function deleteMsg($pdo, $messageId) {
     try {
         $query = "DELETE FROM message where messageId = :messageId";
@@ -54,32 +68,7 @@ function updateMsg($pdo, $messageId, $messageText) {
         die($message);
     }
 }
-function selectMsg($pdo, $messageId) {
-    try {
-        $query = "SELECT * FROM message where messageId = :messageId";
-        $selectUsers = $pdo->prepare($query);
-        $selectUsers->execute([
-            'messageId' => $messageId
-        ]);
-        $users = $selectUsers->fetch();
-        return $users;
-    } catch (PDOException $e) {
-        $message = $e->getMessage();
-        die($message);
-    }
-}
-function chatGroupe($pdo){
-    try {
-        $query = "select * from utilisateur";
-        $selectUsers = $pdo->prepare($query);
-        $selectUsers->execute();
-        $users = $selectUsers->fetchAll();
-        return $users;
-    } catch (PDOException $e) {
-        $message = $e->getMessage();
-        die($message);
-    }
-}
+
 function createChat($pdo, $groupeType){
     try {
         $query = "INSERT INTO conversation (conversationType) values (:groupeType) ";
@@ -107,20 +96,6 @@ function selectChatUser($pdo, $userCo, $users){
         die($message);
     }
 }
-
-function sendMsgGroupe($pdo, $conversationId, $utilisateurId ){
-    try {
-        $query = "INSERT INTO utilisateur_conversation (conversationId, utilisateurID  ) VALUES (:conversationId, :utilisateurID)";
-        $ajouterTypesGemmes = $pdo->prepare($query);
-        $ajouterTypesGemmes->execute([
-            'conversationId' => $conversationId,
-            'utilisateurID' => $_SESSION['user']->utilisateurID
-        ]);
-    } catch (PDOException $e) {
-        $message = $e->getMessage();
-        die($message);
-    }
-}
 function addUserChat($pdo, $conversationId, $utilisateurID){
     try {
         $query = "INSERT INTO utilisateur_conversation (conversationId, utilisateurID) values (:conversationId, :utilisateurID) ";
@@ -135,6 +110,32 @@ function addUserChat($pdo, $conversationId, $utilisateurID){
         die($message);
     }
 }
+function chatGroupe($pdo){
+    try {
+        $query = "select * from utilisateur";
+        $selectUsers = $pdo->prepare($query);
+        $selectUsers->execute();
+        $users = $selectUsers->fetchAll();
+        return $users;
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+function sendMsgGroupe($pdo, $conversationId, $utilisateurId ){
+    try {
+        $query = "INSERT INTO utilisateur_conversation (conversationId, utilisateurID  ) VALUES (:conversationId, :utilisateurID)";
+        $ajouterTypesGemmes = $pdo->prepare($query);
+        $ajouterTypesGemmes->execute([
+            'conversationId' => $conversationId,
+            'utilisateurID' => $_SESSION['user']->utilisateurID
+        ]);
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+
 function selectChatGroupe($pdo) {
     try {
         $query = "SELECT * FROM conversation where conversationType = 'groupe'";
