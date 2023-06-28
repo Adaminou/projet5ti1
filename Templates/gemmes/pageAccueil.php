@@ -19,10 +19,10 @@
          <?php if ($uri === "/mesGemmes") : ?>
          <div class = "flexContainer justify-content-center">
          <div>
-                <p><a class ="btn btn-primary" href="updateGemme?gemmesID=<?= $gemmes->gemmesID ?>">Modifier l'école</a></p>
+                <p><a class ="btn btn-primary" href="updateGemme?gemmesID=<?= $gemmes->gemmesID ?>">Modifier la gemme</a></p>
          </div>
          <div>
-                <p><a class="btn btn-thirday" href="deleteGemme?gemmesID=<?= $gemmes->gemmesID ?>">Supprimer l'école</a></p>
+                <p><a class="btn btn-thirday" href="deleteGemme?gemmesID=<?= $gemmes->gemmesID ?>">Supprimer la gemme</a></p>
          </div>
          </div>
             <?php endif ?>

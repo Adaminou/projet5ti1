@@ -32,6 +32,7 @@ print_r($result);*/
             <li class="menu"><a href="/">Home</a></li>
             <li  class="menu">
                 <?php if(isset($_SESSION['user'])) :?>
+                    <a href="chat">Chat</a></li>
                     <a href="mesGemmes">Mes Gemmes</a>
                     <a href="profil">Page Profil</a></li>
                     <a href="deconnexion">Déconnexion</a>
