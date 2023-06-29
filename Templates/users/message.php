@@ -5,7 +5,7 @@
         <p><?= $message->utilisateurLastname ?></p>
         <div class="flex">
             <p><?= $message->messageText ?></p>
-            <a href="supprimer-msg?id=<?= $message->messageId ?>">X</a>
+            <a href="delete-msg?id=<?= $message->messageId ?>">X</a>
         </div>
         <p><?= $message->messageDate . ' ' . $message->messageHeure ?></p>
     </div>

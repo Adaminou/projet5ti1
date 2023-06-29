@@ -44,7 +44,7 @@ require_once "Templates/users/inscriptionOrEditProfil.php";
     }
     require_once "Templates/users/inscriptionOrEditProfil.php";
     
-// Partie DISCUSSION/CHAT
+// Partie DISCUSSION/CHAT ------------------------------------------------------------------------------------------------------
 
 }elseif ($uri === "/chat") {
         $utilisateurs = selectAllUsers($pdo); 
@@ -59,7 +59,7 @@ require_once "Templates/users/inscriptionOrEditProfil.php";
         $chatGroupe = selectChatGroupe($pdo);
         require_once "Templates/users/chat.php";
 
-}else if (str_starts_with($uri, '/supprimer-msg?id=')){
+}else if (str_starts_with($uri, '/delete-msg?id=')){
     $message = selectMsg($pdo, $_GET['id']);
     if ($message->messageText === 'Ce message a été supprimé.') {
         deleteMsg($pdo, $_GET['id']);
